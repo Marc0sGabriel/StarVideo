@@ -20,7 +20,7 @@ export function Episodes(props: EpisodesProps) {
   );
 
   return (
-    <a href="#">
+    <a href="/episode">
       <span className="text-gray-300">{availableDateFormatted}</span>
 
       <div className="rounded border border-gray-500 p-4 mt-2">
