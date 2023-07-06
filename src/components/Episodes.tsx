@@ -1,6 +1,7 @@
 import { CheckCircle, Lock } from '@phosphor-icons/react';
 import { isPast, format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
+import { Link } from 'react-router-dom';
 
 interface EpisodesProps {
   title: string;
@@ -20,10 +21,10 @@ export function Episodes(props: EpisodesProps) {
   );
 
   return (
-    <a href="/episode">
-      <span className="text-gray-300">{availableDateFormatted}</span>
+    <Link to={`/series/episode/${props.slug}`} className="group">
+      <span className="text-zinc-500">{availableDateFormatted}</span>
 
-      <div className="rounded border border-gray-500 p-4 mt-2">
+      <div className="rounded border border-gray-500 p-4 mt-2 group-hover:border-orange-400">
         <header className="flex items-center justify-between">
           {isEpisodeAvailableFree ? (
             <span className="text-sm flex items-center gap-2 text-blue-500 font-medium">
@@ -47,6 +48,6 @@ export function Episodes(props: EpisodesProps) {
 
         <strong className="text-zinc-100 mt-5 block">{props.title}</strong>
       </div>
-    </a>
+    </Link>
   );
 }
