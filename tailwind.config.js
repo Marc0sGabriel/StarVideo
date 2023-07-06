@@ -3,9 +3,8 @@ export default {
   content: ['./src/**/*.tsx'],
   theme: {
     extend: {
-
       fontFamily: {
-        sans: 'Roboto, sans-serif'
+        sans: 'Roboto, sans-serif',
       },
 
       colors: {
@@ -23,10 +22,11 @@ export default {
         },
 
         gray: {
-          500: '#323238',
+          400: '#1A1A26',
+          500: '#2C2C40',
           600: '#23252b',
-          800: '#141519',
-          900: '#17171A',
+          800: '#0D0D0D',
+          900: '#0E0E14',
         },
 
         orange: {
