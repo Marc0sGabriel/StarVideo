@@ -27,9 +27,9 @@ export function Sidebar() {
   const { data } = useQuery<GetEpisodesQueryResponse>(GET_LESSONS_QUERY);
 
   return (
-    <aside className="w-[348px] bg-gray-900 p-6 border-l border-zinc-800">
-      <span className="font-bold text-2xl pb-6 mb-6 border-b border-zinc-700 block">
-        Proximos de Episodios
+    <aside className="w-[348px] bg-gray-900 p-6 border-l border-gray-400">
+      <span className="font-bold text-zinc-100 text-2xl pb-6 mb-6 border-b border-zinc-700 block">
+        Próximos de Episódios
       </span>
 
       <div className="flex flex-col gap-8">
