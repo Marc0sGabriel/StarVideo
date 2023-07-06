@@ -26,8 +26,6 @@ interface GetEpisodesQueryResponse {
 export function Sidebar() {
   const { data } = useQuery<GetEpisodesQueryResponse>(GET_LESSONS_QUERY);
 
-  console.log(data);
-
   return (
     <aside className="w-[348px] bg-gray-900 p-6 border-l border-zinc-800">
       <span className="font-bold text-2xl pb-6 mb-6 border-b border-zinc-700 block">
@@ -41,7 +39,7 @@ export function Sidebar() {
               key={episode.id}
               title={episode.title}
               slug={episode.slug}
-              avaliableAt={episode.availableAt}
+              avaliableAt={new Date(episode.availableAt)}
               type={episode.episodeType}
             />
           );

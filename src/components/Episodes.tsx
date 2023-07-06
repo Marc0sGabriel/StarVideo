@@ -1,18 +1,27 @@
 import { CheckCircle, Lock } from '@phosphor-icons/react';
+import { isPast, format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 
 interface EpisodesProps {
   title: string;
   slug: string;
-  avaliableAt: string;
+  avaliableAt: Date;
   type: 'free' | 'premium';
 }
 
 export function Episodes(props: EpisodesProps) {
-  const isEpisodeAvailableFree = props.type === 'free';
+  const isEpisodeAvailableFree = isPast(props.avaliableAt);
+  const availableDateFormatted = format(
+    props.avaliableAt,
+    "EEEE' • 'd' de 'MMMM' • 'k'h'mm",
+    {
+      locale: ptBR,
+    }
+  );
 
   return (
     <a href="#">
-      <span className="text-gray-300">Terça • 22 de junho • 19h00</span>
+      <span className="text-gray-300">{availableDateFormatted}</span>
 
       <div className="rounded border border-gray-500 p-4 mt-2">
         <header className="flex items-center justify-between">
@@ -23,7 +32,7 @@ export function Episodes(props: EpisodesProps) {
             </span>
           ) : (
             <span
-              title="Em breve disponivel para usuarios comuns"
+              title="Em breve disponivel para usuarios premium"
               className="text-sm flex items-center gap-2 text-orange-400 font-medium"
             >
               <Lock size={20} weight="bold" />
