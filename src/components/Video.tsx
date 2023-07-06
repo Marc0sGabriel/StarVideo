@@ -75,10 +75,10 @@ export function Video() {
               <FileArrowDown size={40} />
             </div>
             <div className="py-6 leading-relaxed">
-              <strong className="text-2xl">Material Extra</strong>
+              <strong className="text-2xl">Baixar Episódio</strong>
               <p className="text-sm text-gray-200 mt-2">
-                Acesse o material complementar para aproveitar ainda mais sua
-                série favorita
+                Faça o download deste episódio para assistir offline sempre que
+                quiser
               </p>
             </div>
             <div className="h-full p-6 flex items-center">
