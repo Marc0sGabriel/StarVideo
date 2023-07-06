@@ -6,3 +6,22 @@ body {
   -webkit-font-smoothing: antialiased;
   @apply dark:bg-gray-800 dark:text-zinc-100;
 }
+
+* {
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-orange-500 rounded-full;
+}
