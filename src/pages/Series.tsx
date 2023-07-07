@@ -11,7 +11,7 @@ export function Series() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex flex-1">
-        <Video episodeSlug={slug} />
+        {slug ? <Video episodeSlug={slug} /> : <div className="flex-1" />}
         <Sidebar />
       </main>
       <Footer />
