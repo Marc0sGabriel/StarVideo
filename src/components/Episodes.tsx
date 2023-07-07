@@ -3,6 +3,7 @@ import { isPast, format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { Link, useParams } from 'react-router-dom';
 import classNames from 'classnames';
+import { MouseEvent } from 'react';
 
 interface EpisodesProps {
   title: string;
@@ -25,8 +26,20 @@ export function Episodes(props: EpisodesProps) {
 
   const isActiveEpisode = slug === props.slug;
 
+  function handleNotAllowed(event: MouseEvent) {
+    if (!isEpisodeAvailableFree) {
+      event.preventDefault();
+    }
+  }
+
   return (
-    <Link to={`/series/episode/${props.slug}`} className="group">
+    <Link
+      onClick={handleNotAllowed}
+      to={`/series/episode/${props.slug}`}
+      className={classNames('group', {
+        'cursor-not-allowed opacity-80': !isEpisodeAvailableFree,
+      })}
+    >
       <span className="text-zinc-500">{availableDateFormatted}</span>
 
       <div
@@ -52,7 +65,7 @@ export function Episodes(props: EpisodesProps) {
             </span>
           ) : (
             <span
-              title="Em breve disponivel para usfuarios premium"
+              title="Em breve disponivel para usuários premium"
               className="text-sm flex items-center gap-2 text-orange-400 font-medium"
             >
               <Lock size={20} weight="bold" />
