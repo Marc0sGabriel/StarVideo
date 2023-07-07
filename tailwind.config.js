@@ -3,6 +3,9 @@ export default {
   content: ['./src/**/*.tsx'],
   theme: {
     extend: {
+      backgroundImage: {
+        posters: 'url(/src/assets/moviesPoster.jpg)',
+      },
       fontFamily: {
         sans: 'Roboto, sans-serif',
       },
