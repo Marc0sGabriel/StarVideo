@@ -9,6 +9,7 @@ export function Router() {
       <Route path="*" element={<NotFound />} />
       <Route path="/" element={<Subscribe />} />
       <Route path="/series/episode/:slug" element={<Series />} />
+      <Route path="/series" element={<Series />} />
     </Routes>
   );
 }
