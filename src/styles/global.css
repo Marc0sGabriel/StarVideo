@@ -7,6 +7,14 @@ body {
   @apply dark:bg-gray-800 dark:text-zinc-100;
 }
 
+::placeholder {
+  @apply dark:text-zinc-100;
+}
+
+input button {
+  @apply dark:text-zinc-100;
+}
+
 * {
   scrollbar-width: thin;
   scroll-behavior: smooth;

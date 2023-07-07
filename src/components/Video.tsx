@@ -62,7 +62,7 @@ export function Video(props: VideoProps) {
   }
 
   return (
-    <div className="flex-1">
+    <div className="flex-1 bg-zinc-900">
       <div className="bg-black flex justify-center">
         <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
           <Player>
@@ -72,47 +72,48 @@ export function Video(props: VideoProps) {
         </div>
       </div>
 
-      <div className="p-8 max-w-[1100px]">
-        <div className="flex items-start gap-16">
-          <div className="flex-1">
-            <h1 className="font-semibold text-zinc-400">Spy x Family</h1>
-            <h2 className="text-2xl font-bold">{data.episode.title}</h2>
-            <p className="mt-4 text-gray-300 leading-relaxed">
+      <div className="p-3 sm:p-8 max-w-full">
+        <div className="flex flex-col items-center sm:items-start sm:flex sm:flex-row gap-16 lg:justify-between">
+          <div className="flex-1 sm:max-w-[800px]">
+            <h1 className="font-semibold text-xs sm:text-base text-zinc-400">
+              Spy x Family
+            </h1>
+            <h2 className="text-lg sm:text-2xl text-zinc-200 font-bold">
+              {data.episode.title}
+            </h2>
+            <p className="mt-4 text-sm sm:text-base text-gray-300 leading-relaxed">
               {data.episode.description}
             </p>
 
-            <div className="gap-4 mt-6 flex items-center">
+            <div className="gap-4 mt-6 flex items-center p-4">
               <img
-                className="h-16 w-16 rounded-full border-2 border-blue-500"
+                className="h-12 w-12 sm:h-16 sm:w-16 rounded-full border-2 border-blue-500"
                 src={data.episode.userstar.avatarURL}
                 alt="usuário"
               />
               <div className="leading-relaxed">
-                <strong className="text-2xl block font-bold">
+                <strong className="text-lg text-zinc-200 sm:text-2xl block font-bold">
                   {data.episode.userstar.name}
                 </strong>
-                <span className="text-sm block text-zinc-500">
+                <span className="text-sm sm:text-base block text-zinc-500">
                   {data.episode.userstar.nickname}
-                </span>
-                <span className="text-base block max-w-sm font-medium text-zinc-300">
-                  {data.episode.userstar.bio}
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex w-full px-4 sm:w-80 sm:px-0 flex-col gap-4">
             <a
               href="#"
-              className="p-4 bg-orange-500 hover:brightness-75 transition-all duration-300 flex items-center rounded font-bold uppercase gap-2 justify-center"
+              className="text-xs text-zinc-100 sm:text-base p-4 bg-orange-500 hover:brightness-75 transition-all duration-300 flex items-center rounded font-bold uppercase gap-2 justify-center"
             >
               <DiscordLogo size={24} weight="bold" />
-              comunidade do discord
+              comunidade discord
             </a>
 
             <a
               href="#"
-              className="transition-all duration-300 hover:bg-orange-500 hover:text-zinc-100 p-4 border-orange-500 border-2 text-orange-500 flex items-center rounded font-bold uppercase gap-2 justify-center"
+              className="text-xs sm:text-base transition-all duration-300 hover:bg-orange-500 hover:text-zinc-100 p-4 border-orange-500 border-2 text-orange-500 flex items-center rounded font-bold uppercase gap-2 justify-center"
             >
               <Lightning size={24} weight="bold" />
               torne-se premium
@@ -120,7 +121,7 @@ export function Video(props: VideoProps) {
           </div>
         </div>
 
-        <div className="gap-8 mt-20 grid grid-cols-2">
+        <div className="gap-8 mb-5 px-4 sm:px-0 mt-20 justify-center grid grid-cols-1 lg:grid-cols-2">
           <a
             href="#"
             className="bg-gray-700 flex items-stretch gap-6 hover:brightness-90 transition-colors rounded overflow-hidden"
@@ -128,15 +129,20 @@ export function Video(props: VideoProps) {
             <div className="bg-orange-600 h-full p-6 flex items-center">
               <FileArrowDown size={40} />
             </div>
-            <div className="py-6 leading-relaxed">
-              <strong className="text-2xl">Baixar Episódio</strong>
-              <p className="text-sm text-gray-200 mt-2">
-                Faça o download deste episódio para assistir offline sempre que
-                quiser
-              </p>
-            </div>
-            <div className="h-full p-6 flex items-center">
-              <CaretRight size={24} />
+            <div className="flex flex-1 items-center justify-between">
+              <div className="py-6 leading-relaxed">
+                <strong className="text-lg text-zinc-200 sm:text-2xl">
+                  Baixar Episódio
+                </strong>
+                <p className="text-xs sm:text-sm text-gray-200 mt-2">
+                  Faça o download deste episódio para assistir offline sempre
+                  que quiser
+                </p>
+              </div>
+
+              <div className="h-full text-zinc-200 p-6 flex items-center">
+                <CaretRight size={24} />
+              </div>
             </div>
           </a>
 
@@ -147,15 +153,20 @@ export function Video(props: VideoProps) {
             <div className="bg-orange-600 h-full p-6 flex items-center">
               <Image size={40} />
             </div>
-            <div className="py-6 leading-relaxed">
-              <strong className="text-2xl">Wallpapers Exclusivos</strong>
-              <p className="text-sm text-gray-200 mt-2">
-                Curtiu demais essa série? baixe os wallpapers exclusivos e
-                personalize o seu dispositivo
-              </p>
-            </div>
-            <div className="h-full p-6 flex items-center">
-              <CaretRight size={24} />
+            <div className="flex items-center justify-between">
+              <div className="py-6 leading-relaxed">
+                <strong className="text-lg text-zinc-200 sm:text-2xl">
+                  Wallpapers Exclusivos
+                </strong>
+                <p className="text-xs sm:text-sm text-gray-200 mt-2">
+                  Curtiu demais essa série? baixe os wallpapers exclusivos e
+                  personalize o seu dispositivo
+                </p>
+              </div>
+
+              <div className="h-full text-zinc-200 p-6 flex items-center">
+                <CaretRight size={24} />
+              </div>
             </div>
           </a>
         </div>

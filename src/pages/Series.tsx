@@ -10,8 +10,12 @@ export function Series() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex flex-1">
-        {slug ? <Video episodeSlug={slug} /> : <div className="flex-1" />}
+      <main className="flex flex-col flex-1 lg:flex-row">
+        {slug ? (
+          <Video episodeSlug={slug} />
+        ) : (
+          <div className="flex-1 bg-zinc-900" />
+        )}
         <Sidebar />
       </main>
       <Footer />
