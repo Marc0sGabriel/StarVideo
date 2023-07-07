@@ -1,3 +1,6 @@
+import { Player, Youtube, DefaultUi } from '@vime/react';
+import '@vime/core/themes/default.css';
+import { gql, useQuery } from '@apollo/client';
 import {
   CaretRight,
   DiscordLogo,
@@ -5,16 +8,65 @@ import {
   Image,
   Lightning,
 } from '@phosphor-icons/react';
-import { Player, Youtube, DefaultUi } from '@vime/react';
-import '@vime/core/themes/default.css';
 
-export function Video() {
+const GET_EPISODE_BY_SLUG_QUERY = gql`
+  query GetEpisodeBySlug($slug: String) {
+    episode(where: { slug: $slug }) {
+      title
+      id
+      description
+      videoId
+      userstar {
+        avatarURL
+        bio
+        name
+        nickname
+      }
+    }
+  }
+`;
+
+interface GetEpisodeBySlug {
+  episode: {
+    title: string;
+    id: string;
+    description: string;
+    videoId: string;
+    userstar: {
+      avatarURL: string;
+      bio: string;
+      name: string;
+      nickname: string;
+    };
+  };
+}
+
+interface VideoProps {
+  episodeSlug: string | undefined;
+}
+
+export function Video(props: VideoProps) {
+  const { data } = useQuery<GetEpisodeBySlug>(GET_EPISODE_BY_SLUG_QUERY, {
+    variables: {
+      slug: props.episodeSlug,
+    },
+  });
+
+  // Loading Screen
+  if (!data) {
+    return (
+      <div className="flex-1">
+        <p>Carregando...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="flex-1">
       <div className="bg-black flex justify-center">
         <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
           <Player>
-            <Youtube videoId={'ofXigq9aIpo'} />
+            <Youtube videoId={data.episode.videoId} />
             <DefaultUi />
           </Player>
         </div>
@@ -24,25 +76,27 @@ export function Video() {
         <div className="flex items-start gap-16">
           <div className="flex-1">
             <h1 className="font-semibold text-zinc-400">Spy x Family</h1>
-            <h2 className="text-2xl font-bold">S1 E1 Operação Strix</h2>
+            <h2 className="text-2xl font-bold">{data.episode.title}</h2>
             <p className="mt-4 text-gray-300 leading-relaxed">
-              Twilight, codinome do melhor agente de espionagem de Westalis,
-              recebe sua nova missão: fazer seu filho entrar no prestigioso
-              Colégio Éden para se aproximar de Donovan Desmond, do Partido da
-              União Nacional. Primeira meta: obter um filho.
+              {data.episode.description}
             </p>
 
             <div className="gap-4 mt-6 flex items-center">
               <img
                 className="h-16 w-16 rounded-full border-2 border-blue-500"
-                src="https://github.com/Marc0sGabriel.png"
+                src={data.episode.userstar.avatarURL}
                 alt="usuário"
               />
               <div className="leading-relaxed">
                 <strong className="text-2xl block font-bold">
-                  Marcos Gabriel
+                  {data.episode.userstar.name}
                 </strong>
-                <span className="text-sm block text-zinc-500">@marcosg43</span>
+                <span className="text-sm block text-zinc-500">
+                  {data.episode.userstar.nickname}
+                </span>
+                <span className="text-base block max-w-sm font-medium text-zinc-300">
+                  {data.episode.userstar.bio}
+                </span>
               </div>
             </div>
           </div>
