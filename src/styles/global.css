@@ -4,7 +4,7 @@
 
 body {
   -webkit-font-smoothing: antialiased;
-  @apply dark:bg-gray-800 dark:text-zinc-100;
+  @apply bg-gray-800 dark:text-zinc-100;
 }
 
 ::placeholder {
@@ -31,5 +31,5 @@ input button {
 }
 
 *::-webkit-scrollbar-thumb {
-  @apply bg-orange-500 rounded-full;
+  @apply bg-starBlue-800 rounded-full;
 }
