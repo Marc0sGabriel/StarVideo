@@ -105,7 +105,7 @@ export function Video(props: VideoProps) {
           <div className="flex w-full px-4 sm:w-80 sm:px-0 flex-col gap-4">
             <a
               href="#"
-              className="text-xs text-zinc-100 sm:text-base p-4 bg-starBlue-600 hover:brightness-75 transition-all duration-300 flex items-center rounded font-bold uppercase gap-2 justify-center"
+              className="text-xs text-zinc-100 sm:text-base p-4 bg-purple-600 hover:brightness-75 transition-all duration-300 flex items-center rounded font-bold uppercase gap-2 justify-center"
             >
               <DiscordLogo size={24} weight="fill" />
               comunidade discord
@@ -113,7 +113,7 @@ export function Video(props: VideoProps) {
 
             <a
               href="#"
-              className="text-xs sm:text-base transition-all duration-300 hover:bg-cyan-500 hover:text-zinc-100 p-4 border-cyan-500 border-2 text-cyan-500 flex items-center rounded font-bold uppercase gap-2 justify-center"
+              className="text-xs sm:text-base transition-all duration-300 hover:bg-starBlue-400 hover:text-zinc-100 p-4 border-starBlue-400 border-2 text-starBlue-400 flex items-center rounded font-bold uppercase gap-2 justify-center"
             >
               <Lightning size={24} weight="bold" />
               torne-se premium

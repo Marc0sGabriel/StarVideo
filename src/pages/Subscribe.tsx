@@ -56,18 +56,18 @@ export function Subscribe() {
               onChange={(event) => setName(event.target.value)}
               type="text"
               placeholder="Digite seu nome completo"
-              className="bg-zinc-900 text-zinc-200 focus:outline-orange-500 outline-none placeholder:text-zinc-400 rounded px-5 h-14"
+              className="bg-zinc-900 text-zinc-200 focus:outline-starBlue-400 outline-none placeholder:text-zinc-400 rounded px-5 h-14"
             />
             <input
               onChange={(event) => setEmail(event.target.value)}
               type="email"
               placeholder="Digite seu e-mail"
-              className="bg-zinc-900 text-zinc-200 outline-none focus:outline-orange-500 placeholder:text-zinc-400 rounded px-5 h-14"
+              className="bg-zinc-900 text-zinc-200 outline-none focus:outline-starBlue-400 placeholder:text-zinc-400 rounded px-5 h-14"
             />
 
             <button
               disabled={loading}
-              className="mt-4 disabled:cursor-not-allowed disabled:opacity-50 py-4 bg-orange-500 font-bold text-base rounded uppercase hover:brightness-75"
+              className="mt-4 disabled:cursor-not-allowed disabled:opacity-50 py-4 bg-starBlue-500 font-bold text-base rounded uppercase hover:brightness-75"
               type="submit"
             >
               Inscrever-se
