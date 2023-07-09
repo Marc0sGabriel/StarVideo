@@ -44,9 +44,9 @@ export function Episodes(props: EpisodesProps) {
 
       <div
         className={classNames(
-          'rounded border border-gray-500 p-4 mt-2 group-hover:border-orange-400',
+          'rounded border border-gray-500 p-4 mt-2 group-hover:border-starBlue-400',
           {
-            'bg-orange-500': isActiveEpisode,
+            'bg-starBlue-500': isActiveEpisode,
           }
         )}
       >
