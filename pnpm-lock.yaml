@@ -35,6 +35,9 @@ dependencies:
   react-router-dom:
     specifier: ^6.14.1
     version: 6.14.1(react-dom@18.2.0)(react@18.2.0)
+  swiper:
+    specifier: ^10.0.4
+    version: 10.0.4
 
 devDependencies:
   '@graphql-codegen/typescript':
@@ -3273,6 +3276,11 @@ packages:
     dependencies:
       tslib: 2.6.0
     dev: true
+
+  /swiper@10.0.4:
+    resolution: {integrity: sha512-DlNR3KiaVkPep6RraZ2tNr7lvyuzELuR+4NZr4wO42t0UworIO3DxDlz8b5Q3uUioh7cJad99EdRJLkPF+r8Ag==}
+    engines: {node: '>= 4.7.0'}
+    dev: false
 
   /symbol-observable@4.0.0:
     resolution: {integrity: sha512-b19dMThMV4HVFynSAM1++gBHAbk2Tc/osgLIBZMKsyqh34jb2e8Os7T6ZW/Bt3pJFdBTd2JwAnAAEQV7rSNvcQ==}
