@@ -4,7 +4,7 @@ import { SeriesCard } from './SeriesCard';
 export function SeriesNavigator() {
   return (
     <main className="max-w-full w-full">
-      <div className="px-4 flex mx-auto max-w-[1100px] flex-col gap-7 items-start">
+      <div className="px-6 flex mt-12 mx-auto max-w-[1100px] flex-col gap-7 items-start">
         <div>
           <div className="mb-6">
             <h1 className="text-2xl leading-relaxed mb-2 text-blue-100 font-medium">
@@ -42,6 +42,10 @@ export function SeriesNavigator() {
             <SeriesCard />
           </nav>
         </div>
+      </div>
+
+      <div className="bg-starBlue-900 w-full flex justify-center my-14">
+        <img src="/src/assets/horimiyaPoster.png" alt="" />
       </div>
     </main>
   );
