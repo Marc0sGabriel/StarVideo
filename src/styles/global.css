@@ -31,5 +31,5 @@ input button {
 }
 
 *::-webkit-scrollbar-thumb {
-  @apply bg-starBlue-800 rounded-full;
+  @apply bg-starBlue-400 rounded-full;
 }
