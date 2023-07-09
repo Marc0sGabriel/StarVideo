@@ -66,7 +66,7 @@ export function Episodes(props: EpisodesProps) {
           ) : (
             <span
               title="Em breve disponivel para usuários premium"
-              className="text-sm flex items-center gap-2 text-orange-400 font-medium"
+              className="text-sm flex items-center gap-2 text-starBlue-200 font-medium"
             >
               <Lock size={20} weight="bold" />
               Em Breve
@@ -75,9 +75,9 @@ export function Episodes(props: EpisodesProps) {
 
           <span
             className={classNames(
-              'text-xs text-orange-500 px-2 rounded py-[0.125rem] border-2 border-orange-500 font-bold',
+              'text-xs text-starBlue-200 px-2 rounded py-[0.125rem] border-2 border-starBlue-200 font-bold',
               {
-                'text-zinc-200 border-zinc-200': isActiveEpisode,
+                '!text-zinc-200 !border-zinc-200': isActiveEpisode,
               }
             )}
           >
