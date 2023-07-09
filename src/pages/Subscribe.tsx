@@ -34,10 +34,10 @@ export function Subscribe() {
 
   return (
     <div className="min-h-screen bg-posters bg-cover bg-no-repeat flex flex-col items-center">
-      <div className="w-full px-4 sm:px-0 max-w-[1100px] flex flex-col justify-center gap-10 sm:flex sm:flex-row min-h-screen sm:min-h-0 items-center sm:justify-between sm:mt-20 mx-auto">
-        <div className="max-w-[640px] flex flex-col items-center sm:items-start">
+      <div className="w-full px-4 sm:px-0 max-w-[1100px] flex flex-col justify-center gap-10 lg:flex lg:flex-row min-h-screen lg:min-h-0 items-center sm:mt-20 mx-auto">
+        <div className="max-w-[640px] flex flex-col items-center lg:items-start">
           <Logo />
-          <h1 className="mt-8 text-zinc-200 text-xl text-center sm:text-left sm:text-3xl leading-tight font-medium">
+          <h1 className="mt-8 text-zinc-200 text-xl text-center lg:text-left sm:text-3xl leading-tight font-medium">
             A VideoStar promove a arte e a cultura dos animes e filmes para uma
             comunidade de fãs apaixonados no mundo todo.
           </h1>
