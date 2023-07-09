@@ -1,7 +1,7 @@
 import { gql, useQuery } from '@apollo/client';
 import { Episodes } from './Episodes';
 
-const GET_LESSONS_QUERY = gql`
+const GET_EPISODES_QUERY = gql`
   query {
     episodes(orderBy: publishedAt_ASC, stage: PUBLISHED) {
       id
@@ -24,7 +24,7 @@ interface GetEpisodesQueryResponse {
 }
 
 export function Sidebar() {
-  const { data } = useQuery<GetEpisodesQueryResponse>(GET_LESSONS_QUERY);
+  const { data } = useQuery<GetEpisodesQueryResponse>(GET_EPISODES_QUERY);
 
   return (
     <aside className="lg:w-[348px] md:inline hidden bg-gray-900 p-6 border-l border-zinc-700">
