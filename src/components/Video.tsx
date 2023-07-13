@@ -10,43 +10,47 @@ import {
 } from '@phosphor-icons/react';
 
 const GET_EPISODE_BY_SLUG_QUERY = gql`
-  query GetEpisodeBySlug($slug: String) {
-    episode(where: { slug: $slug }) {
-      title
+  query GetEpisodeShowBySlug($slug: String) {
+    show(where: { id: "cljw1mis346cd0blvd0wfifrx" }) {
       id
+      title
+      description
+    }
+    showEpisode(where: { slug: $slug }) {
+      id
+      title
       description
       videoId
-      userstar {
-        avatarURL
-        bio
-        name
-        nickname
-      }
+      availableAt
+      episodeType
     }
   }
 `;
 
-interface GetEpisodeBySlug {
-  episode: {
-    title: string;
+interface GetEpisodeShowBySlug {
+  show: {
     id: string;
+    title: string;
     description: string;
+  };
+  showEpisode: {
+    id: string;
+    title: string;
     videoId: string;
-    userstar: {
-      avatarURL: string;
-      bio: string;
-      name: string;
-      nickname: string;
-    };
+    description: string;
+    availableAt: string;
+    episodeType: string;
+    slug: string;
   };
 }
 
 interface VideoProps {
   episodeSlug: string | undefined;
+  episodeID: string[] | undefined;
 }
 
 export function Video(props: VideoProps) {
-  const { data } = useQuery<GetEpisodeBySlug>(GET_EPISODE_BY_SLUG_QUERY, {
+  const { data } = useQuery<GetEpisodeShowBySlug>(GET_EPISODE_BY_SLUG_QUERY, {
     variables: {
       slug: props.episodeSlug,
     },
@@ -66,7 +70,11 @@ export function Video(props: VideoProps) {
       <div className="bg-black flex justify-center">
         <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
           <Player>
-            <Youtube videoId={data.episode.videoId} />
+            <Youtube
+              key={data.showEpisode.id}
+              videoId={data.showEpisode.videoId}
+            />
+            ;
             <DefaultUi />
           </Player>
         </div>
@@ -75,28 +83,31 @@ export function Video(props: VideoProps) {
       <div className="p-3 sm:p-8 max-w-full">
         <div className="flex flex-col items-center sm:items-start sm:flex sm:flex-row gap-16 lg:justify-between">
           <div className="flex-1 sm:max-w-[800px]">
-            <h1 className="font-semibold text-xs sm:text-base text-zinc-400">
-              Spy x Family
-            </h1>
-            <h2 className="text-lg sm:text-2xl text-zinc-200 font-bold">
-              {data.episode.title}
+            <h2
+              key={data.showEpisode.id}
+              className="text-lg sm:text-2xl text-zinc-200 font-bold"
+            >
+              {data.showEpisode.title}
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-gray-300 leading-relaxed">
-              {data.episode.description}
+            <p
+              key={data.showEpisode.slug}
+              className="mt-4 text-sm sm:text-base text-gray-300 leading-relaxed"
+            >
+              {data.showEpisode.description}
             </p>
 
             <div className="gap-4 mt-6 flex items-center p-4">
               <img
                 className="h-12 w-12 sm:h-16 sm:w-16 rounded-full border-2 border-blue-500"
-                src={data.episode.userstar.avatarURL}
+                src={'https://github.com/Marc0sGabriel.png'}
                 alt="usuário"
               />
               <div className="leading-relaxed">
                 <strong className="text-lg text-zinc-200 sm:text-2xl block font-bold">
-                  {data.episode.userstar.name}
+                  Marcos Gabriel
                 </strong>
                 <span className="text-sm sm:text-base block text-zinc-500">
-                  {data.episode.userstar.nickname}
+                  @marc0s_gabriel23
                 </span>
               </div>
             </div>
