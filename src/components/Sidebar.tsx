@@ -2,29 +2,43 @@ import { gql, useQuery } from '@apollo/client';
 import { Episodes } from './Episodes';
 
 const GET_EPISODES_QUERY = gql`
-  query {
-    episodes(orderBy: publishedAt_ASC, stage: PUBLISHED) {
-      id
-      slug
+  query MyQuery($id: ID) {
+    show(where: { id: $id }) {
       title
-      availableAt
-      episodeType
+      showEpisodes(orderBy: publishedAt_ASC) {
+        title
+        id
+        slug
+        availableAt
+        episodeType
+      }
     }
   }
 `;
 
-interface GetEpisodesQueryResponse {
-  episodes: {
-    id: string;
+interface GetEpisodesShowQueryResponse {
+  show: {
     title: string;
-    slug: string;
-    availableAt: string;
-    episodeType: 'free' | 'premium';
-  }[];
+    showEpisodes: {
+      id: string;
+      title: string;
+      slug: string;
+      availableAt: string;
+      episodeType: 'free' | 'premium';
+    }[];
+  };
 }
 
-export function Sidebar() {
-  const { data } = useQuery<GetEpisodesQueryResponse>(GET_EPISODES_QUERY);
+interface NextEpisodesProps {
+  episodeID: string | undefined;
+}
+
+export function Sidebar(props: NextEpisodesProps) {
+  const { data } = useQuery<GetEpisodesShowQueryResponse>(GET_EPISODES_QUERY, {
+    variables: {
+      id: props.episodeID,
+    },
+  });
 
   return (
     <aside className="lg:w-[348px] md:inline hidden bg-gray-900 p-6 border-l border-zinc-700">
@@ -33,7 +47,7 @@ export function Sidebar() {
       </span>
 
       <div className="flex flex-col gap-8">
-        {data?.episodes.map((episode) => {
+        {data?.show.showEpisodes.map((episode) => {
           return (
             <Episodes
               key={episode.id}
