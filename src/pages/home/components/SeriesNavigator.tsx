@@ -6,9 +6,9 @@ export function SeriesNavigator() {
   return (
     <main className="max-w-full w-full">
       <Carousel />
-      <div className="px-4 mt-12 flex mx-auto md:max-w-[800px] lg:max-w-[1100px] flex-col gap-7 items-start">
+      <div className="px-4 mt-28 flex mx-auto md:max-w-[800px] lg:max-w-[1100px] flex-col gap-7 items-start">
         <div>
-          <div className="mb-6">
+          <div>
             <h1 className="text-2xl leading-relaxed mb-2 text-blue-100 font-medium">
               Assista de graça!
             </h1>
@@ -20,15 +20,11 @@ export function SeriesNavigator() {
 
           <nav className="flex gap-6">
             <SeriesCard />
-            <SeriesCard />
-            <SeriesCard />
-            <SeriesCard />
-            <SeriesCard />
           </nav>
         </div>
 
         <div>
-          <div className="mb-6">
+          <div className="mt-10">
             <h1 className="text-2xl leading-relaxed mb-2 text-blue-100 font-medium">
               Fique em dia antes da nova temporada
             </h1>
@@ -40,15 +36,11 @@ export function SeriesNavigator() {
 
           <nav className="flex gap-6">
             <SeriesCard />
-            <SeriesCard />
-            <SeriesCard />
-            <SeriesCard />
-            <SeriesCard />
           </nav>
         </div>
 
         <div>
-          <div className="mb-6">
+          <div className="mt-10">
             <h1 className="text-2xl leading-relaxed mb-2 text-blue-100 font-medium">
               Recém atualizados
             </h1>
@@ -59,10 +51,6 @@ export function SeriesNavigator() {
           </div>
 
           <nav className="flex gap-6">
-            <SeriesCard />
-            <SeriesCard />
-            <SeriesCard />
-            <SeriesCard />
             <SeriesCard />
           </nav>
         </div>
