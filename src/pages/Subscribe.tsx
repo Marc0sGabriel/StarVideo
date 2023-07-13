@@ -29,7 +29,7 @@ export function Subscribe() {
         email,
       },
     });
-    navigate('/series/episode/operacao-strix');
+    navigate('/series');
   }
 
   return (
