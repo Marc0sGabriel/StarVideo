@@ -4,7 +4,7 @@
 
 body {
   -webkit-font-smoothing: antialiased;
-  @apply bg-gray-800 dark:text-zinc-100;
+  @apply bg-gradient-to-b from-gray-800 via-gray-800 to-indigo-950 text-zinc-200;
 }
 
 ::placeholder {
