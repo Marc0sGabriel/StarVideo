@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { Footer } from '../components/Footer';
+import { FooterVideoPage } from '../components/Footer.tsx';
 import { Header } from '../components/Header';
 import { Sidebar } from '../components/Sidebar';
 import { Video } from '../components/Video';
@@ -43,7 +43,7 @@ export function Serie() {
         )}
         <Sidebar episodeID={isActiveShow} />
       </main>
-      <Footer />
+      <FooterVideoPage />
     </div>
   );
 }
