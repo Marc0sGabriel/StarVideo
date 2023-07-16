@@ -1,9 +1,11 @@
 import { gql, useQuery } from '@apollo/client';
 import { Episodes } from './Episodes';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const GET_EPISODES_QUERY = gql`
-  query MyQuery($id: ID) {
-    show(where: { id: $id }) {
+  query MyQuery($slug: String) {
+    show(where: { slug: $slug }, stage: PUBLISHED) {
       title
       showEpisodes(orderBy: publishedAt_ASC) {
         title
@@ -30,15 +32,24 @@ interface GetEpisodesShowQueryResponse {
 }
 
 interface NextEpisodesProps {
-  episodeID: string | undefined;
+  slug: string | undefined;
 }
 
 export function Sidebar(props: NextEpisodesProps) {
   const { data } = useQuery<GetEpisodesShowQueryResponse>(GET_EPISODES_QUERY, {
     variables: {
-      id: props.episodeID,
+      slug: props.slug,
     },
   });
+
+  const [serieId, setSerieId] = useState(['']);
+  const { slug } = useParams<{ slug: string }>();
+
+  useEffect(() => {
+    if (data && data.show) {
+      setSerieId(data.show.showEpisodes.map((serie) => serie.id));
+    }
+  }, [data]);
 
   return (
     <aside className="lg:w-[348px] md:inline hidden bg-gray-800 p-6 border-l border-zinc-800">
@@ -50,7 +61,7 @@ export function Sidebar(props: NextEpisodesProps) {
         {data?.show.showEpisodes.map((episode) => {
           return (
             <Episodes
-              key={episode.id}
+              key={slug}
               title={episode.title}
               slug={episode.slug}
               avaliableAt={new Date(episode.availableAt)}
