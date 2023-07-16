@@ -13,7 +13,7 @@ interface EpisodesProps {
 }
 
 export function Episodes(props: EpisodesProps) {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug } = useParams<{ slug: string | undefined }>();
 
   const isEpisodeAvailableFree = isPast(props.avaliableAt);
   const availableDateFormatted = format(
