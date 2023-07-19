@@ -7,7 +7,7 @@ export function SeriesNavigator() {
     <main className="max-w-full w-full">
       <Carousel />
       <div className="px-4 mt-28 flex mx-auto md:max-w-[800px] lg:max-w-[1100px] flex-col gap-7 items-start">
-        <div>
+        <div className="max-w-full w-full">
           <div>
             <h1 className="text-2xl leading-relaxed mb-2 text-blue-100 font-medium">
               Assista de graça!
@@ -18,12 +18,12 @@ export function SeriesNavigator() {
             <Separator />
           </div>
 
-          <nav className="flex gap-6">
+          <nav className="h-[40rem] max-w-full w-full">
             <SeriesCard />
           </nav>
         </div>
 
-        <div>
+        <div className="max-w-full w-full">
           <div className="mt-10">
             <h1 className="text-2xl leading-relaxed mb-2 text-blue-100 font-medium">
               Fique em dia antes da nova temporada
@@ -34,12 +34,12 @@ export function SeriesNavigator() {
             <Separator />
           </div>
 
-          <nav className="flex gap-6">
+          <nav className="h-[40rem] max-w-full w-full">
             <SeriesCard />
           </nav>
         </div>
 
-        <div>
+        <div className="max-w-full w-full">
           <div className="mt-10">
             <h1 className="text-2xl leading-relaxed mb-2 text-blue-100 font-medium">
               Recém atualizados
@@ -50,7 +50,7 @@ export function SeriesNavigator() {
             <Separator />
           </div>
 
-          <nav className="flex gap-6">
+          <nav className="h-[40rem] max-w-full w-full">
             <SeriesCard />
           </nav>
         </div>
