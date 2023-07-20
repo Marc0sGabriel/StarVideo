@@ -48,7 +48,8 @@ export function SeriesCard() {
   return (
     <div className="flex items-center h-full max-w-full overflow-hidden justify-center gap-9">
       <Swiper
-        slidesPerView={4}
+        slidesPerView={1}
+        spaceBetween={10}
         freeMode={true}
         navigation={{
           enabled: true,
@@ -58,6 +59,20 @@ export function SeriesCard() {
         }}
         modules={[Navigation, Pagination]}
         className="supimpa"
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 50,
+          },
+        }}
       >
         {data?.cards.map((card) => {
           return (
