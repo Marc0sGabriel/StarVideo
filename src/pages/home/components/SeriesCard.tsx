@@ -58,7 +58,7 @@ export function SeriesCard() {
           clickable: true,
         }}
         modules={[Navigation, Pagination]}
-        className="supimpa"
+        className="seriesCardSwiper"
         breakpoints={{
           640: {
             slidesPerView: 2,

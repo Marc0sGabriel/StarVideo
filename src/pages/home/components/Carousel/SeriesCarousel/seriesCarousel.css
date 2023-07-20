@@ -1,9 +1,9 @@
-.supimpa {
+.seriesCardSwiper {
   width: 100%;
   height: 100%;
 }
 
-.supimpa .swiper-slide {
+.seriesCardSwiper .swiper-slide {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -11,19 +11,19 @@
   height: 100%;
 }
 
-.supimpa .swiper-slide img {
+.seriesCardSwiper .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.supimpa .swiper-pagination {
+.seriesCardSwiper .swiper-pagination {
   display: none;
 }
 
-.supimpa .swiper-button-next,
-.supimpa .swiper-button-prev {
+.seriesCardSwiper .swiper-button-next,
+.seriesCardSwiper .swiper-button-prev {
   margin: 0;
   padding: 0;
   position: absolute;
