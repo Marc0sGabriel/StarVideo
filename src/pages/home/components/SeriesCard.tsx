@@ -61,7 +61,7 @@ export function SeriesCard() {
         className="seriesCardSwiper"
         breakpoints={{
           640: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 20,
           },
           768: {
