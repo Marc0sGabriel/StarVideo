@@ -27,7 +27,16 @@ export function Carousel() {
       >
         <SwiperSlide>
           <img
-            src="/src/assets/pictures/spiderverse.jpg"
+            src="/src/assets/animeAd.png"
+            alt=""
+            className="max-w-fit overflow-hidden object-fill"
+            width={400}
+          />
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <img
+            src="/src/assets/horimiyaPoster.png"
             alt=""
             className="max-w-fit overflow-hidden object-fill"
             width={400}
@@ -37,14 +46,6 @@ export function Carousel() {
         <SwiperSlide>
           <img
             src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/F3D3A70A0ADEAF78D4713869F9492CFDF2A18687862E45AD4B388246E474B845/scale?width=1200&aspectRatio=1.78&format=jpeg"
-            alt=""
-            className="max-w-fit overflow-hidden object-fill"
-            width={400}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="/src/assets/horimiyaPoster.png"
             alt=""
             className="max-w-fit overflow-hidden object-fill"
             width={400}
