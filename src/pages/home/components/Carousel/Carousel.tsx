@@ -27,7 +27,7 @@ export function Carousel() {
       >
         <SwiperSlide>
           <img
-            src="src/images/animeAd.png"
+            src="images/animeAd.png"
             alt=""
             className="max-w-fit overflow-hidden object-fill"
             width={400}
@@ -36,7 +36,7 @@ export function Carousel() {
 
         <SwiperSlide>
           <img
-            src="src/images/horimiyaPoster.png"
+            src="images/horimiyaPoster.png"
             alt=""
             className="max-w-fit overflow-hidden object-fill"
             width={400}

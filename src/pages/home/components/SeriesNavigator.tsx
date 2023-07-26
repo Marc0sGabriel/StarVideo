@@ -72,7 +72,7 @@ export function SeriesNavigator() {
           Você chegou ao fim da lista...
         </h2>
         <img
-          src="src/images/yuzu.png"
+          src="images/yuzu.png"
           className="w-40 ml-9 mt-8 mb-20 self-center h-full"
           alt=""
         />

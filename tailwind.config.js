@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        posters: 'url(src/images/moviesPoster.jpg)',
+        posters: 'url(images/moviesPoster.jpg)',
       },
       fontFamily: {
         sans: 'Roboto, sans-serif',
