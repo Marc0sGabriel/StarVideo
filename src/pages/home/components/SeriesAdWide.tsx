@@ -25,25 +25,30 @@ export function SeriesAdWide({
           alt=""
         />
         <div className="px-4 pt-2 pb-8 space-y-4">
+          <h1 className="text-base font-bold sm:text-2xl">
+            Boruto: Next Generations
+          </h1>
           <p className="sm:max-w-xl md:max-w-4xl">
-            Houve um homem que conquistou tudo aquilo que o mundo tinha a
-            oferecer, o lendário Rei dos Piratas, Roger. Capturado e condenado à
-            execução pelo Governo Mundial, suas últimas palavras lançaram
-            legiões aos mares. "Meu tesouro? Se quiserem, podem pegá-lo.
-            Procurem-no! Ele contém tudo que este mundo pode oferecer!". Foi a
-            revelação do maior
+            Uzumaki Boruto, filho de Uzumaki Naruto, o Sétimo Hokage, se
+            inscreveu na Academia Ninja para aprender a ser um verdadeiro ninja.
+            Os outros estudantes o ignoram por ser "apenas o filho do Hokage",
+            mas a paixão e a personalidade do Boruto vai acabar com todos esses
+            preconceitos. Quando uma série de misteriosos eventos começa a se
+            desenrolar, cabe a Boruto e seus novos amigos a investigá-los. Como
+            um tornado, Boruto entra no coração de todos: sua história está
+            prestes a começar!
           </p>
           <div className="flex gap-2 items-center">
             <Link
-              to={'#'}
+              to={'episode/boruto'}
               className={`flex items-center justify-center font-medium text-zinc-200 rounded ${btnColor} gap-2 py-2 w-40 sm:py-4 sm:w-52`}
             >
               <Play size={23} weight="bold" />
               COMEÇAR ASSISTIR
             </Link>
-            <Link to={'#'}>
+            <button type="button" className="cursor-pointer">
               <BookmarkSimple size={25} weight="bold" />
-            </Link>
+            </button>
           </div>
         </div>
       </div>
