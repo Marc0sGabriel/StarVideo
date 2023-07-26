@@ -25,13 +25,6 @@ export function SeriesNavigator() {
           </nav>
         </div>
 
-        <SeriesAdWide
-          primary={'from-purple-600'}
-          secondary={'to-red-500'}
-          btnColor={'bg-purple-600'}
-          imageUrl="https://sm.ign.com/t/ign_pl/screenshot/default/john-wick-3-review_z4q4.1280.jpg"
-        />
-
         <div className="max-w-full w-full">
           <div className="mt-10">
             <h1 className="text-2xl leading-relaxed mb-2 text-blue-100 font-medium">
@@ -51,7 +44,7 @@ export function SeriesNavigator() {
           primary={'from-red-500'}
           secondary={'to-orange-400'}
           btnColor={'bg-red-600'}
-          imageUrl="https://s2-techtudo.glbimg.com/jT_Nq_aLiobRkV4z782uiWlZ2UY=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/J/8/EbfA0BTv2pV98gASWdfA/f5d0f04e85a224493fe9caa2e59740811630901421-main.png"
+          imageUrl="https://www.otakupt.com/wp-content/uploads/2020/11/Boruto-anime-manga-visual-2.jpg"
         />
 
         <div className="max-w-full w-full">
