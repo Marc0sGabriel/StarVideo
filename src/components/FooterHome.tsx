@@ -49,14 +49,14 @@ export function FooterHome() {
                 <LinkedinLogo size={24} weight="fill" />
                 <span>Linkedin</span>
               </Link>
-              <Link
+              <a
                 className="flex gap-2 hover:underline hover:text-zinc-300 transition-all w-fit"
-                to={'https://linkedin.com/'}
+                href="emailto:marcosgdeveloper@gmail.com"
                 target="_blank"
               >
                 <Envelope size={24} weight="fill" />
                 <span>Gmail</span>
-              </Link>
+              </a>
             </div>
 
             <div className="flex flex-col text-sm sm:text-base text-zinc-500 gap-2">
