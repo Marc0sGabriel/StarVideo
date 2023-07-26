@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-// import required modules
 import { Navigation, Pagination } from 'swiper/modules';
 
 import './Carousel/SeriesCarousel/seriesCarousel.css';
@@ -78,7 +77,7 @@ export function SeriesCard() {
           return (
             <SwiperSlide key={card.id}>
               <Link key={card.id} to={`/series/episode/${card.slug}`}>
-                <div className="h-[250px] w-[150px] my-4">
+                <div className="h-[250px] w-[150px] my-4 hover:opacity-90 transition-all">
                   <img
                     src={card.cardImage.url}
                     className="object-cover w-full h-full"
