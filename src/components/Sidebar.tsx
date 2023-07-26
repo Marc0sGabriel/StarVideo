@@ -1,7 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
 import { Episodes } from './Episodes';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 
 const GET_EPISODES_QUERY = gql`
   query MyQuery($slug: String) {
@@ -42,14 +41,7 @@ export function Sidebar(props: NextEpisodesProps) {
     },
   });
 
-  const [serieId, setSerieId] = useState(['']);
   const { slug } = useParams<{ slug: string }>();
-
-  useEffect(() => {
-    if (data && data.show) {
-      setSerieId(data.show.showEpisodes.map((serie) => serie.id));
-    }
-  }, [data]);
 
   return (
     <aside className="lg:w-[348px] md:inline hidden bg-gray-800 p-6 border-l border-zinc-800">
