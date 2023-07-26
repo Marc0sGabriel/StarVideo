@@ -64,7 +64,7 @@ export function SeriesNavigator() {
       </div>
 
       <div className="mb-32 w-full bg-gradient-to-t from-starBlue-400 to-cyan-300 flex justify-center sm:p-4">
-        <img src="/src/assets/horimiyaPoster.png" alt="" />
+        <img src="src/images/horimiyaPoster.png" alt="" />
       </div>
 
       <div className="self-center mx-auto w-[19rem] p-8">
@@ -72,7 +72,7 @@ export function SeriesNavigator() {
           Você chegou ao fim da lista...
         </h2>
         <img
-          src="/src/assets/yuzu.png"
+          src="src/images/yuzu.png"
           className="w-40 ml-9 mt-8 mb-20 self-center h-full"
           alt=""
         />
