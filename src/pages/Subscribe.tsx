@@ -38,7 +38,7 @@ export function Subscribe() {
         <div className="max-w-[640px] flex flex-col items-center lg:items-start">
           <Logo />
           <h1 className="mt-8 text-zinc-200 text-xl text-center lg:text-left sm:text-3xl leading-tight font-medium">
-            A VideoStar promove a arte e a cultura dos animes e filmes para uma
+            A Star Video promove a arte e a cultura dos animes e filmes para uma
             comunidade de fãs apaixonados no mundo todo.
           </h1>
         </div>
